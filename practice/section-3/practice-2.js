@@ -1,5 +1,15 @@
 'use strict';
 
 function createUpdatedCollection(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+  let targetArray = objectB['value'];
+  let result;
+  targetArray.forEach(element => {
+    result = collectionA.map(item => {
+      if(element == item.key && item.count >= 3){
+        item.count -= parseInt( item.count / 3)
+      }
+      return item;
+    })
+  });
+  return result;
 }
